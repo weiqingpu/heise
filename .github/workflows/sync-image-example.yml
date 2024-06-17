@@ -33,5 +33,5 @@ jobs:
     - name: Use Skopeo Tools Sync Image to Docker Hub
       run: |
         #!/usr/bin/env bash
-        skopeo copy docker://gcr.io/kaniko-project/silsuer/yapi:latest docker://heise/silsuer/yapi:latest
+        skopeo copy docker://docker.io/yapi:latest docker://registry.cn-hangzhou.aliyuncs.com/heise/yapi:latest
  
