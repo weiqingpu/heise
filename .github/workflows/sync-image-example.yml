@@ -16,7 +16,11 @@ on:
         required: true
         default: 'registry.cn-hangzhou.aliyuncs.com'
       TARGET_REPOSITORY:
-        description: '空间名称'
+        description: '命名空间'
+        required: true
+        default: 'heise_space'
+      TARGET_DOCKRE_REGISTRY:
+        description: '镜像仓库'
         required: true
         default: 'heise_registry'
       ARCH:
@@ -54,8 +58,8 @@ jobs:
         id: pull_tag_push
         run: |
           docker pull --platform ${{ github.event.inputs.ARCH }} ${{ github.event.inputs.IMAGE_NAME }}
-          docker tag ${{ github.event.inputs.IMAGE_NAME }} ${{ github.event.inputs.TARGET_REGISTRY }}/${{ github.event.inputs.TARGET_REPOSITORY }}/${{ github.event.inputs.NEW_NAME }}
-          docker push ${{ github.event.inputs.TARGET_REGISTRY }}/${{ github.event.inputs.TARGET_REPOSITORY }}/${{ github.event.inputs.NEW_NAME }}
+          docker tag ${{ github.event.inputs.IMAGE_NAME }} ${{ github.event.inputs.TARGET_REGISTRY }}/${{ github.event.inputs.TARGET_REPOSITORY }}/${{ github.event.inputs.TARGET_DOCKRE_REGISTRY }}
+          docker push ${{ github.event.inputs.TARGET_REGISTRY }}/${{ github.event.inputs.TARGET_REPOSITORY }}/${{ github.event.inputs.TARGET_DOCKRE_REGISTRY }}
         continue-on-error: true
 
       - name: 检查镜像推送成功
