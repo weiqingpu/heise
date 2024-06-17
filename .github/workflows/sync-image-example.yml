@@ -6,7 +6,7 @@ on:
       IMAGE_NAME:
         description: '原镜像名称:版本'
         required: true
-        default: 'silsuer/yapi'
+        default: 'silsuer/yapi:latest'
       NEW_NAME:
         description: '同步后镜像名称:版本'
         required: true
