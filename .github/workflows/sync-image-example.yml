@@ -6,11 +6,11 @@ on:
       IMAGE_NAME:
         description: '原镜像名称:版本'
         required: true
-        default: 'greenbone/pg-gvm:stable'
+        default: 'greenbone/gvmd:stable'
       NEW_NAME:
         description: '同步后镜像名称:版本'
         required: true
-        default: 'greenbone/pg-gvm:stable'
+        default: 'greenbone/gvmd:stable'
       TARGET_REGISTRY:
         description: '仓库地址'
         required: true
@@ -22,7 +22,7 @@ on:
       TARGET_DOCKRE_REGISTRY:
         description: '镜像仓库'
         required: true
-        default: 'greenbone-pg-gvm-stable'
+        default: 'greenbone-gvmd-stable'
       ARCH:
         description: '系统架构'
         required: true
